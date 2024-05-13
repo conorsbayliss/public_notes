@@ -14762,7 +14762,7 @@ $$</p>
 <ol>
 <li><strong>Feasibility</strong>
 $$
-F(c_1+g_1,\ldots,c_J+g_J) = 0
+F(c_1+g_1,\ldots,c_J+g_J;n) = 0
 $$</li>
 <li><strong>Implementability</strong>
 $$
@@ -14848,8 +14848,7 @@ $$</li>
 <li><strong>Feasibility</strong>
 $$
 F(c_1+g_1,\ldots,c_J+g_J;n) \leq 0
-$$
-and</li>
+$$</li>
 <li><strong>Implementability</strong>
 $$
 \sum_j U_j c_j = U_l n
@@ -14942,7 +14941,7 @@ and that G is homothetic. Then, at the solution to the Ramsey problem, $\tau_i =
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="Proposition-3"><strong><em>Proposition 3</em></strong><a class="anchor-link" href="#Proposition-3">&#182;</a></h4><p>Suppose that the utillity is weakly separable across consumption goods and is homothetic in consumption. Then $U_i/U_j = F_i/F_j$ for $i,j \in \{1,\ldots,J\}$. That is, optimal commodity taxes are uniform in the sense that the Ramsey taxes satisfy $\tau_i = \tau_j, \quad \forall i,j \in \{1,\ldots,J\}$.</p>
+<h4 id="Proposition-3"><strong><em>Proposition 3</em></strong><a class="anchor-link" href="#Proposition-3">&#182;</a></h4><p>Suppose that the utillity is weakly separable across consumption goods and is homothetic in consumption. Then $U_i/U_j = F_i/F_j$ for $i,j \in \{1,\ldots,J\}$. That is, optimal commodity taxes are uniform in the sense that the Ramsey taxes satisfy $\tau_i = \tau_j,\forall i,j \in \{1,\ldots,J\}$.</p>
 
 </div>
 </div>
@@ -15036,18 +15035,18 @@ $$</p>
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>Now, set up the Largrangian for the Ramsey planner
 $$
-\mathcal{L^{RP}} = U(c;l) - \gamma \left[F(c_1+g_1,\ldots,c_J+g_J;n)\right] + \Lambda \left[\sum_i U_i c_i - U_l n \right]
+\mathcal{L^{RP}} = U(c;l) - \gamma \left[F(c_1+g_1,\ldots,c_J+g_J;n)\right] + \Lambda \left[U_l n-\sum_i U_i c_i \right]
 $$
 $$
-\left[c_k \right]: U_k - \gamma F_k + \Lambda U_k + \Lambda \sum_j U_{kj}c_j - \Lambda n U_{lk} = 0
+\left[c_k \right]: U_k - \gamma F_k - \Lambda U_k - \Lambda \sum_j U_{kj}c_j + \Lambda n U_{lk} = 0
 $$
 and so we find
 $$
-(1+\Lambda)U_k + \Lambda\left[\sum_j c_j U_{kj} - nU_{lk} \right] = \gamma F_k
+(1-\Lambda)U_k - \Lambda\left[\sum_j c_j U_{kj} - nU_{lk} \right] = \gamma F_k
 $$
 and, using that $\sum_j c_j U_{ij} = AU_i$, we see
 $$
-(1+\Lambda)U_k + \Lambda A U_k - \Lambda nU_{lk} = \gamma F_k.
+(1-\Lambda)U_k - \Lambda A U_k + \Lambda nU_{lk} = \gamma F_k.
 $$
 Then, by the utility function, we know
 $$
@@ -15057,11 +15056,11 @@ U_{lk} = W_{21} G_k \\
 $$
 and so
 $$
-(1+\Lambda)W_1 G_k + \Lambda A W_1 G_k - \Lambda n W_{21}G_k = \gamma F_k
+(1-\Lambda)W_1 G_k - \Lambda A W_1 G_k + \Lambda n W_{21}G_k = \gamma F_k
 $$
 which, upon rearrangement gives 
 $$
-\frac{G_k}{F_k} = \frac{\gamma}{(1-\Lambda)W_1 + \Lambda A W_1 - \Lambda n W_{21}}
+\frac{G_k}{F_k} = \frac{\gamma}{(1-\Lambda)W_1 - \Lambda A W_1 + \Lambda n W_{21}}
 $$
 which is independent of $k$, and so it holds for all varieties.</p>
 
@@ -15113,7 +15112,7 @@ Since,
 $$
 1+\underbrace{\tau_1}_\text{= 0} = -\frac{U_1}{U_l}\frac{F_n}{F_1} \iff \frac{U_l}{U_1} = -\frac{F_n}{F_1}
 $$
-So, eve if $U$ satisfies $W(G(c);l)$ optimal commodity taxes on goods $2$ through $J$ are not necessarily uniform.</p>
+So, even if $U$ satisfies $W(G(c);l)$ optimal commodity taxes on goods $2$ through $J$ are not necessarily uniform.</p>
 <h4 id="Infinite-Horizon"><strong>Infinite Horizon</strong><a class="anchor-link" href="#Infinite-Horizon">&#182;</a></h4><p>Finally, in order to connect this result on uniform commodity taxation to results in infinite horizon models, suppose that the utility function is defined over an infinite sequence of consumption and labour good as $U(c_1,c_2,\ldots;l_1,l_2,\ldots)$. The assumption that the utility is of the form $V(\phi(c_1,c_2,\ldots);l_1,l_2,\ldots)$ with $\phi$ homothetic and separable between consumption and all labour goods $l_1,l_2,\ldots$ together with the assumption that the utility function is additively separable across time with constant discunt factor $\beta$ restricts us to the form
 $$
 \sum_t \beta^t \left[\frac{c_t^{1-\sigma}}{1-\sigma} +G(l_t)\right].
